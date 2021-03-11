@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="banconextsoftModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'banconextsoft.dbo.CIDADES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CIDADES">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="nome" Type="nvarchar" MaxLength="500" />
+    <Property Name="id_estado" Type="int" />
+  </EntityType>
+  <EntityType Name="CLIENTE">
+    <Key>
+      <PropertyRef Name="ID_CLIENTE" />
+    </Key>
+    <Property Name="ID_CLIENTE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CPF" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="NOME" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="TELEFONE" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ENDERECOS">
+    <Key>
+      <PropertyRef Name="ID_END" />
+    </Key>
+    <Property Name="ID_END" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CPF" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TIPO" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="LOGRADOURO" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="NUMERO" Type="nvarchar" MaxLength="500" />
+    <Property Name="COMPLEMENTO" Type="nvarchar" MaxLength="500" />
+    <Property Name="BAIRRO" Type="nvarchar" MaxLength="500" />
+    <Property Name="CIDADE" Type="nvarchar" MaxLength="500" />
+    <Property Name="ESTADO" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'banconextsoft.dbo.ESTADOS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ESTADOS">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="75" />
+    <Property Name="uf" Type="varchar" MaxLength="5" />
+  </EntityType>
+  <EntityContainer Name="banconextsoftModelStoreContainer">
+    <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ENDERECOS" EntityType="Self.ENDERECOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CIDADES" EntityType="Self.CIDADES" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CIDADES].[id] AS [id], 
+    [CIDADES].[nome] AS [nome], 
+    [CIDADES].[id_estado] AS [id_estado]
+    FROM [dbo].[CIDADES] AS [CIDADES]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ESTADOS" EntityType="Self.ESTADOS" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ESTADOS].[id] AS [id], 
+    [ESTADOS].[nome] AS [nome], 
+    [ESTADOS].[uf] AS [uf]
+    FROM [dbo].[ESTADOS] AS [ESTADOS]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

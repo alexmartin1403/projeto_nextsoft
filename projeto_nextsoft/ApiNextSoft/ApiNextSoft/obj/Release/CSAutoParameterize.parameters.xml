@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="banconextsoftEntities-Web.config Connection String" description="banconextsoftEntities A Cadeia de Conexão usada em web.config pelo aplicativo para acessar o banco de dados." defaultValue="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=den1.mssql8.gear.host;user id=banconextsoft;password=next@1975;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\alexm\\source\\repos\\ApiNextSoft\\ApiNextSoft\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='banconextsoftEntities']/@connectionString" />
+  </parameter>
+  <parameter name="banconextsoftEntities1-Web.config Connection String" description="banconextsoftEntities1 A Cadeia de Conexão usada em web.config pelo aplicativo para acessar o banco de dados." defaultValue="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=den1.mssql8.gear.host;user id=banconextsoft;password=next@1975;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\alexm\\source\\repos\\ApiNextSoft\\ApiNextSoft\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='banconextsoftEntities1']/@connectionString" />
+  </parameter>
+</parameters>
