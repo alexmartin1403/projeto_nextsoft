@@ -40,9 +40,9 @@ namespace AplicacaoNextSoft
             this.lblTelefone = new System.Windows.Forms.Label();
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblEndAd = new System.Windows.Forms.Label();
             this.comboBoxCidade = new System.Windows.Forms.ComboBox();
             this.comboBoxEstado = new System.Windows.Forms.ComboBox();
-            this.btnIncluirEndAd = new System.Windows.Forms.Button();
             this.txtTipo = new System.Windows.Forms.TextBox();
             this.lblTipo = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.TextBox();
@@ -137,11 +137,11 @@ namespace AplicacaoNextSoft
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Location = new System.Drawing.Point(541, 161);
+            this.lblTelefone.Location = new System.Drawing.Point(478, 158);
             this.lblTelefone.Name = "lblTelefone";
-            this.lblTelefone.Size = new System.Drawing.Size(81, 25);
+            this.lblTelefone.Size = new System.Drawing.Size(165, 25);
             this.lblTelefone.TabIndex = 8;
-            this.lblTelefone.Text = "Telefone:";
+            this.lblTelefone.Text = "Telefone com DDD:";
             // 
             // txtTelefone
             // 
@@ -154,9 +154,9 @@ namespace AplicacaoNextSoft
             // groupBox1
             // 
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox1.Controls.Add(this.lblEndAd);
             this.groupBox1.Controls.Add(this.comboBoxCidade);
             this.groupBox1.Controls.Add(this.comboBoxEstado);
-            this.groupBox1.Controls.Add(this.btnIncluirEndAd);
             this.groupBox1.Controls.Add(this.txtTipo);
             this.groupBox1.Controls.Add(this.lblTipo);
             this.groupBox1.Controls.Add(this.txtCidade);
@@ -181,6 +181,14 @@ namespace AplicacaoNextSoft
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Endereço";
             // 
+            // lblEndAd
+            // 
+            this.lblEndAd.AutoSize = true;
+            this.lblEndAd.Location = new System.Drawing.Point(19, 41);
+            this.lblEndAd.Name = "lblEndAd";
+            this.lblEndAd.Size = new System.Drawing.Size(0, 25);
+            this.lblEndAd.TabIndex = 22;
+            // 
             // comboBoxCidade
             // 
             this.comboBoxCidade.FormattingEnabled = true;
@@ -198,16 +206,6 @@ namespace AplicacaoNextSoft
             this.comboBoxEstado.Size = new System.Drawing.Size(209, 33);
             this.comboBoxEstado.TabIndex = 20;
             this.comboBoxEstado.Visible = false;
-            // 
-            // btnIncluirEndAd
-            // 
-            this.btnIncluirEndAd.Location = new System.Drawing.Point(33, 40);
-            this.btnIncluirEndAd.Name = "btnIncluirEndAd";
-            this.btnIncluirEndAd.Size = new System.Drawing.Size(294, 34);
-            this.btnIncluirEndAd.TabIndex = 19;
-            this.btnIncluirEndAd.UseVisualStyleBackColor = true;
-            this.btnIncluirEndAd.Visible = false;
-            this.btnIncluirEndAd.Click += new System.EventHandler(this.btnIncluirEndAd_Click);
             // 
             // txtTipo
             // 
@@ -384,7 +382,7 @@ namespace AplicacaoNextSoft
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(738, 27);
+            this.btnVoltar.Location = new System.Drawing.Point(738, 26);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(177, 58);
             this.btnVoltar.TabIndex = 15;
@@ -482,10 +480,10 @@ namespace AplicacaoNextSoft
         private System.Windows.Forms.Button btnIncluirNovo;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnIcluirEndereco;
-        private System.Windows.Forms.Button btnIncluirEndAd;
         private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.ComboBox comboBoxCidade;
         private System.Windows.Forms.ComboBox comboBoxEstado;
+        private System.Windows.Forms.Label lblEndAd;
     }
 }
 

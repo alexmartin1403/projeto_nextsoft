@@ -38,3 +38,43 @@ C:\Users\alexm\source\repos\AplicacaoNextSoft\AplicacaoNextSoft\obj\Release\netc
 C:\Users\alexm\source\repos\AplicacaoNextSoft\AplicacaoNextSoft\obj\Release\netcoreapp3.1\AplicacaoNextSoft.dll
 C:\Users\alexm\source\repos\AplicacaoNextSoft\AplicacaoNextSoft\obj\Release\netcoreapp3.1\AplicacaoNextSoft.pdb
 C:\Users\alexm\source\repos\AplicacaoNextSoft\AplicacaoNextSoft\obj\Release\netcoreapp3.1\AplicacaoNextSoft.genruntimeconfig.cache
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\AplicacaoNextSoft.exe
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\AplicacaoNextSoft.deps.json
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\AplicacaoNextSoft.runtimeconfig.json
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\AplicacaoNextSoft.runtimeconfig.dev.json
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\AplicacaoNextSoft.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\AplicacaoNextSoft.pdb
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Innofactor.EfCoreJsonValueConverter.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Innofactor.EfCoreJsonValueConverter.Attributes.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Nancy.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\RestSharp.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\bin\Release\netcoreapp3.1\System.Net.Http.Formatting.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\obj\Release\netcoreapp3.1\AplicacaoNextSoft.csprojAssemblyReference.cache
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\obj\Release\netcoreapp3.1\AplicacaoNextSoft.Form1.resources
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\obj\Release\netcoreapp3.1\AplicacaoNextSoft.csproj.GenerateResource.cache
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\obj\Release\netcoreapp3.1\AplicacaoNextSoft.AssemblyInfoInputs.cache
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\obj\Release\netcoreapp3.1\AplicacaoNextSoft.AssemblyInfo.cs
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\obj\Release\netcoreapp3.1\AplicacaoNextSoft.csproj.CoreCompileInputs.cache
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\obj\Release\netcoreapp3.1\AplicacaoNextSoft.csproj.CopyComplete
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\obj\Release\netcoreapp3.1\AplicacaoNextSoft.dll
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\obj\Release\netcoreapp3.1\AplicacaoNextSoft.pdb
+D:\Ale\trampo\repos c#\AplicacaoNextSoft\AplicacaoNextSoft\obj\Release\netcoreapp3.1\AplicacaoNextSoft.genruntimeconfig.cache

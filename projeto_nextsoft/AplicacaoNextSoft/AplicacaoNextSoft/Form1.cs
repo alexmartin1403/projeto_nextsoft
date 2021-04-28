@@ -20,7 +20,8 @@ namespace AplicacaoNextSoft
 
     public partial class Form1 : Form
     {
-        int endereco = 0;
+        //inicialização de variáveis
+        int endereco = 1;
         string tipoInicial = "";
         string api = "http://apitestnext.gearhostpreview.com";
         public Form1()
@@ -30,6 +31,7 @@ namespace AplicacaoNextSoft
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Chama metodo pesquisarAtualizar
             pesquisarAtualizar();
 
         }
@@ -56,6 +58,7 @@ namespace AplicacaoNextSoft
 
         private void comboBoxTipo_SelectedValueChanged(object sender, EventArgs e)
         {
+            //preenchendo os dados de endereço, quando o combo de numeração é alterado
             int selectedValue = comboBoxNumEnd.SelectedIndex;
             txtTipo.Text = Convert.ToString(dataGridView1.Rows[selectedValue].Cells[2].Value);
             txtLogradouro.Text = Convert.ToString(dataGridView1.Rows[selectedValue].Cells[3].Value);
@@ -69,6 +72,7 @@ namespace AplicacaoNextSoft
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            //Utilizando o PUT através da API para salvar as alterações nos dados do cliente e dos endereços
             CLIENTE cli = new CLIENTE();
             HttpClient clint = new HttpClient();
             clint.BaseAddress = new Uri(api + "/api/");
@@ -81,11 +85,13 @@ namespace AplicacaoNextSoft
                 txtComplemento.Text + "&bairro=" + txtBairro.Text + "&estado=" + txtEstado.Text + "&cidade=" +
                 txtCidade.Text + "&tipo2=" + tipoInicial, end).Result;
 
+            //Atulizando os dados após a alteração
             pesquisarAtualizar();
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            //Apaga os campos para a inclusão de um novo cliente
             txtCPF.Text = string.Empty;
             txtNome.Text = string.Empty;
             txtEmail.Text = string.Empty;
@@ -112,6 +118,7 @@ namespace AplicacaoNextSoft
             txtCidade.Visible = false;
             comboBoxCidade.Visible = true;
             
+            //Lê os dados da tabela estados e preenche os dados no combo box
             HttpClient clint = new HttpClient();
             clint.BaseAddress = new Uri(api + "/api/");
             HttpResponseMessage responseEst = clint.GetAsync("Estados").Result;
@@ -125,7 +132,7 @@ namespace AplicacaoNextSoft
                 comboBoxEstado.Items.Add(dataGridView1.Rows[i].Cells[1].Value);
             }
 
-            
+            //Lê os dados da tabela cidades e preenche os dados no combo box
             HttpResponseMessage responseCid = clint.GetAsync("Cidades").Result;
 
             var cid = responseCid.Content.ReadAsAsync<IEnumerable<CIDADES>>().Result;
@@ -140,16 +147,18 @@ namespace AplicacaoNextSoft
         }
 
         private void btnCadastrarNovo_Click(object sender, EventArgs e)
-        {
+        {           
+
+            //Verifica se os campos foram preenchidos
             if ((txtCPF.Text == string.Empty) || (txtNome.Text == string.Empty) || (txtEmail.Text == string.Empty) ||
                 (txtTelefone.Text == string.Empty) || (txtTipo.Text == string.Empty) || (txtLogradouro.Text == string.Empty) ||
-                (txtNum.Text == string.Empty) || (txtComplemento.Text == string.Empty) || (txtBairro.Text == string.Empty) ||
-                (comboBoxEstado.Text == string.Empty) || (comboBoxCidade.Text == string.Empty))
+                (txtBairro.Text == string.Empty) ||(comboBoxEstado.Text == string.Empty) || (comboBoxCidade.Text == string.Empty))
             {
                 MessageBox.Show("Favor preencher todos os dados");
                 goto fim;
             }
 
+            //Consulta o CPF no banco e verifica se ele já existe
             HttpClient clint = new HttpClient();
             clint.BaseAddress = new Uri(api + "/api/");
             HttpResponseMessage responseCliP = clint.GetAsync("Clientes?cpf=" + txtCPF.Text).Result;
@@ -163,14 +172,18 @@ namespace AplicacaoNextSoft
                 MessageBox.Show("Esse CPF já existe");
                 goto fim;
             }
+
+            //Seta a variável com o valor 1
             endereco = 1;
 
+            //Verifica se o campo e-mail não possui o caractere "@" ou o caractere "."
             if (!(txtEmail.Text.Contains("@")) || !(txtEmail.Text.Contains(".")))
             {
                 MessageBox.Show("Preencha o e-mail corretamente");
                 goto fim;
             }
 
+            //Instancia o metodo e verifica se o CPF é válido
             ClienteValidacaoCpf clienteCpf = new ClienteValidacaoCpf();
 
             if (!clienteCpf.ValidaCPF(txtCPF.Text))
@@ -179,13 +192,21 @@ namespace AplicacaoNextSoft
                 goto fim;
             }
 
-            if ((txtTelefone.Text.Length < 10) && (!Regex.IsMatch(txtTelefone.Text, @"^[0-9]+$")))
+            // Verifica se o campo telefone tem menos de 10 carecteres e se é um número
+            if ((txtTelefone.Text.Length < 10) || (!Regex.IsMatch(txtTelefone.Text, @"^[0-9]+$")))
             {
                 MessageBox.Show("Número de Tefone incorreto");
                 goto fim;
             }
 
+            // Verifica se o campo número do logradouro foi preenchido com um número
+            if ((!Regex.IsMatch(txtNum.Text, @"^[0-9]+$"))&&(txtNum.Text != ""))
+            {
+                MessageBox.Show("Número do logradouro incorreto");
+                goto fim;
+            }
 
+            //Inclui no banco os dados do cliente e de seus endereços, através da API
             CLIENTE cli = new CLIENTE() { CPF = txtCPF.Text, NOME = txtNome.Text, EMAIL = txtEmail.Text, TELEFONE = txtTelefone.Text };
             HttpResponseMessage responseCli = clint.PostAsJsonAsync("Clientes", cli).Result;
 
@@ -195,8 +216,8 @@ namespace AplicacaoNextSoft
                 + txtTipo.Text + "&logradouro=" + txtLogradouro.Text + "&numero=" + txtNum.Text + "&complemento=" +
                 txtComplemento.Text + "&bairro=" + txtBairro.Text + "&estado=" +  comboBoxEstado.Text + "&cidade=" +
                 comboBoxCidade.Text, end).Result;
-            btnIcluirEndereco.Visible = true;
-
+            
+            //Limpa os campos de endereço
             txtTipo.Text = string.Empty;
             txtLogradouro.Text = string.Empty;
             txtNum.Text = string.Empty;
@@ -204,12 +225,21 @@ namespace AplicacaoNextSoft
             txtBairro.Text = string.Empty;
             comboBoxCidade.Text = string.Empty;
             comboBoxEstado.Text = string.Empty;
+
+            //Informa o cadastramento ao usuário
             MessageBox.Show("Cadastro realizado com sucesso");
+
+            //Atuliza a numeração do endereço
+            endereco++;
+            lblEndAd.Text = "Endereço " + endereco;
+
+            btnIcluirEndereco.Visible = true;
         fim:;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
+            //Limpa e habilita/desabilita os campos ao voltar para a tela inicial
             txtCPF.Text = string.Empty;
             txtNome.Text = string.Empty;
             txtEmail.Text = string.Empty;
@@ -234,8 +264,7 @@ namespace AplicacaoNextSoft
             btnIcluirEndereco.Visible = false;
             comboBoxNumEnd.Items.Clear();
             comboBoxNumEnd.Text = string.Empty;
-            endereco = 0;
-            btnIncluirEndAd.Visible = false;
+            lblEndAd.Text = "";         
             txtEstado.Visible = true;
             txtCidade.Visible = true;
             comboBoxEstado.Visible = false;
@@ -244,6 +273,7 @@ namespace AplicacaoNextSoft
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            //Exclui cliente do banco baseado no número de CPF digitado
             DialogResult confirm = MessageBox.Show("Deseja Continuar?", "Excluir Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             if (confirm.ToString().ToUpper() == "YES")
             {
@@ -253,6 +283,7 @@ namespace AplicacaoNextSoft
 
                 HttpResponseMessage responseEnd = clint.DeleteAsync("Enderecos?cpf=" + txtCPF.Text).Result;
             }
+            //Limpa os campos
             txtCPF.Text = string.Empty;
             txtNome.Text = string.Empty;
             txtEmail.Text = string.Empty;
@@ -271,26 +302,20 @@ namespace AplicacaoNextSoft
 
         private void btnIcluirEndereco_Click(object sender, EventArgs e)
         {
-            txtTipo.Text = string.Empty;
-            txtLogradouro.Text = string.Empty;
-            txtNum.Text = string.Empty;
-            txtComplemento.Text = string.Empty;
-            txtBairro.Text = string.Empty;
-            comboBoxEstado.Text = string.Empty;
-            comboBoxCidade.Text = string.Empty;
-            btnIcluirEndereco.Visible = false;
+            //Soma um a variável de endereço
             endereco++;
-            btnIncluirEndAd.Visible = true;
-            btnIncluirEndAd.Text = "Incluir Endereço " + endereco;
-        }
 
-        private void btnIncluirEndAd_Click(object sender, EventArgs e)
-        {
-            if ((txtCPF.Text == string.Empty) || (txtTipo.Text == string.Empty) || (txtLogradouro.Text == string.Empty) ||
-                (txtNum.Text == string.Empty) || (txtComplemento.Text == string.Empty) || (txtBairro.Text == string.Empty) ||
-                (txtEstado.Text == string.Empty) || (txtCidade.Text == string.Empty))
+            //Veifica se os campos não estão em branco e se o campo número esta preenchido com um número.
+            if (((txtCPF.Text == string.Empty) || (txtTipo.Text == string.Empty) || (txtLogradouro.Text == string.Empty) 
+                || (txtBairro.Text == string.Empty) || (txtEstado.Text == string.Empty) || (txtCidade.Text == string.Empty))
+                && ((!Regex.IsMatch(txtNum.Text, @"^[0-9]+$")) && (txtNum.Text != "")))
             {
-
+                MessageBox.Show("Favor preencher todos os dados corretamente");
+                endereco--;
+            }
+            else
+            {
+                //Inclui os dados do cliente e dos seus endereços
                 HttpClient clint = new HttpClient();
                 clint.BaseAddress = new Uri(api + "/api/");
 
@@ -298,9 +323,10 @@ namespace AplicacaoNextSoft
 
                 HttpResponseMessage responseEnd = clint.PostAsJsonAsync("Enderecos?cpf=" + txtCPF.Text + "&tipo="
                     + txtTipo.Text + "&logradouro=" + txtLogradouro.Text + "&numero=" + txtNum.Text + "&complemento=" +
-                    txtComplemento.Text + "&bairro=" + txtBairro.Text + "&estado=" + txtEstado.Text + "&cidade=" +
-                    txtCidade.Text, end).Result;
+                    txtComplemento.Text + "&bairro=" + txtBairro.Text + "&estado=" + comboBoxEstado.Text + "&cidade=" +
+                    comboBoxCidade.Text, end).Result;
 
+                //Limpa os campos
                 txtTipo.Text = string.Empty;
                 txtLogradouro.Text = string.Empty;
                 txtNum.Text = string.Empty;
@@ -308,45 +334,74 @@ namespace AplicacaoNextSoft
                 txtBairro.Text = string.Empty;
                 comboBoxEstado.Text = string.Empty;
                 comboBoxCidade.Text = string.Empty;
-                btnIncluirEndAd.Visible = false;
                 btnIcluirEndereco.Visible = true;
+
+                //Informa o cadastramento ao usuário
+                MessageBox.Show("Cadastro realizado com sucesso");
             }
 
 
+
+            //Mostra o endereço que está sendo cadastrado
+            lblEndAd.Text = "Endereço " + endereco;
+
         }
-        private void pesquisarAtualizar()
-        {
+
+            private void pesquisarAtualizar()
+        {   
+            //Limpa os campos
+            txtNome.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtTelefone.Text = string.Empty;
+            txtTipo.Text = string.Empty;
+            txtLogradouro.Text = string.Empty;
+            txtNum.Text = string.Empty;
+            txtComplemento.Text = string.Empty;
+            txtBairro.Text = string.Empty;
+            txtEstado.Text = string.Empty;
+            txtCidade.Text = string.Empty;
+            comboBoxNumEnd.Text = string.Empty;
             comboBoxNumEnd.Items.Clear();
 
+            //Procura no banco, o CPF digitado, através da API 
             HttpClient clint = new HttpClient();
             clint.BaseAddress = new Uri(api + "/api/");
             HttpResponseMessage responseCli = clint.GetAsync("Clientes?cpf=" + txtCPF.Text).Result;
 
             var cli = responseCli.Content.ReadAsAsync<IEnumerable<CLIENTE>>().Result;
 
+            //Preenche o datagrid
             dataGridView1.DataSource = cli;
 
+            //Finaliza processo se o datagrid estiver em branco
             if (dataGridView1.RowCount == 0)
             {
                 goto fim;
             }
 
+            //Prenche os campos com os dados do datagrid
             txtNome.Text = Convert.ToString(dataGridView1.Rows[0].Cells[2].Value);
 
             txtEmail.Text = Convert.ToString(dataGridView1.Rows[0].Cells[3].Value);
 
             txtTelefone.Text = Convert.ToString(dataGridView1.Rows[0].Cells[4].Value);
 
+            //Pesquisa no banco os endereços encontrados nesse CPF
             HttpResponseMessage responseEnd = clint.GetAsync("Enderecos?cpf=" + txtCPF.Text).Result;
 
             var end = responseEnd.Content.ReadAsAsync<IEnumerable<ENDERECOS>>().Result;
 
+            //Preenche o datagrid com os endereços encontrados
             dataGridView1.DataSource = end;
 
+            //prenche o combo box com a quantidade de endereços encontrados
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 comboBoxNumEnd.Items.Add(i + 1);
             }
+
+            comboBoxNumEnd.Text = "1";
+
         fim:;
         }
 

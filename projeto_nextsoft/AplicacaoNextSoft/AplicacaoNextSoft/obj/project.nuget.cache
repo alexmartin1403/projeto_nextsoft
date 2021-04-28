@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7bdw/rv7k1TUBkZiBA+8vRI/qNQfnMnowOGOMcHOXa4qJHjVe4fPIS6Q1fPt6khm0/byWACFgyJt+IT/zurQOw==",
+  "dgSpecHash": "Ehcu6tZV7/TJmNw4ESVZjvJfJWZMxOJ4YvcwtLdRY4bjS5OekPA982P+rvUMjqkFvKTRle2251H4lsdbHtvj+g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexm\\source\\repos\\AplicacaoNextSoft\\AplicacaoNextSoft\\AplicacaoNextSoft.csproj",
+  "projectFilePath": "C:\\Users\\alexm\\Downloads\\projeto_nextsoft-master\\projeto_nextsoft-master\\projeto_nextsoft\\AplicacaoNextSoft\\AplicacaoNextSoft\\AplicacaoNextSoft.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexm\\.nuget\\packages\\innofactor.efcorejsonvalueconverter\\2.0.2\\innofactor.efcorejsonvalueconverter.2.0.2.nupkg.sha512",
     "C:\\Users\\alexm\\.nuget\\packages\\innofactor.efcorejsonvalueconverter.attributes\\2.0.1\\innofactor.efcorejsonvalueconverter.attributes.2.0.1.nupkg.sha512",

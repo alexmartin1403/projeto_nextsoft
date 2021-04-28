@@ -1,25 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexm\\source\\repos\\AplicacaoNextSoft\\AplicacaoNextSoft\\AplicacaoNextSoft.csproj": {}
+    "C:\\Users\\alexm\\Downloads\\projeto_nextsoft-master\\projeto_nextsoft-master\\projeto_nextsoft\\AplicacaoNextSoft\\AplicacaoNextSoft\\AplicacaoNextSoft.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexm\\source\\repos\\AplicacaoNextSoft\\AplicacaoNextSoft\\AplicacaoNextSoft.csproj": {
+    "C:\\Users\\alexm\\Downloads\\projeto_nextsoft-master\\projeto_nextsoft-master\\projeto_nextsoft\\AplicacaoNextSoft\\AplicacaoNextSoft\\AplicacaoNextSoft.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexm\\source\\repos\\AplicacaoNextSoft\\AplicacaoNextSoft\\AplicacaoNextSoft.csproj",
+        "projectUniqueName": "C:\\Users\\alexm\\Downloads\\projeto_nextsoft-master\\projeto_nextsoft-master\\projeto_nextsoft\\AplicacaoNextSoft\\AplicacaoNextSoft\\AplicacaoNextSoft.csproj",
         "projectName": "AplicacaoNextSoft",
-        "projectPath": "C:\\Users\\alexm\\source\\repos\\AplicacaoNextSoft\\AplicacaoNextSoft\\AplicacaoNextSoft.csproj",
+        "projectPath": "C:\\Users\\alexm\\Downloads\\projeto_nextsoft-master\\projeto_nextsoft-master\\projeto_nextsoft\\AplicacaoNextSoft\\AplicacaoNextSoft\\AplicacaoNextSoft.csproj",
         "packagesPath": "C:\\Users\\alexm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexm\\source\\repos\\AplicacaoNextSoft\\AplicacaoNextSoft\\obj\\",
+        "outputPath": "C:\\Users\\alexm\\Downloads\\projeto_nextsoft-master\\projeto_nextsoft-master\\projeto_nextsoft\\AplicacaoNextSoft\\AplicacaoNextSoft\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\alexm\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,7 +86,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

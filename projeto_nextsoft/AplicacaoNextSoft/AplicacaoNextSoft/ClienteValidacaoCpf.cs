@@ -9,21 +9,22 @@ namespace AplicacaoNextSoft
         public bool ValidaCPF(string vrCPF)
 
         {
-
+            //Retira ponto e traço do CPF se houver
             string valor = vrCPF.Replace(".", "");
 
             valor = valor.Replace("-", "");
 
 
-
+            //Verifica se o CPF tem 11 digitos
             if (valor.Length != 11)
 
                 return false;
 
 
-
+            //Cria a variavel igual com valor true
             bool igual = true;
 
+            
             for (int i = 1; i < 11 && igual; i++)
 
                 if (valor[i] != valor[0])
@@ -31,17 +32,17 @@ namespace AplicacaoNextSoft
                     igual = false;
 
 
-
+            //Verifica se o CPF é 12345678909
             if (igual || valor == "12345678909")
 
                 return false;
 
 
-
+            //Cria variavel de vetor com cada número do CPF
             int[] numeros = new int[11];
 
 
-
+            //Transforma os digitos do número do CPF em string
             for (int i = 0; i < 11; i++)
 
                 numeros[i] = int.Parse(
@@ -49,7 +50,7 @@ namespace AplicacaoNextSoft
                   valor[i].ToString());
 
 
-
+            //Realiza alguns calculos para verificar se o CPF é valido
             int soma = 0;
 
             for (int i = 0; i < 9; i++)

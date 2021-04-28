@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="Estado-Web.config Connection String" description="Estado A Cadeia de Conexão usada em web.config pelo aplicativo para acessar o banco de dados." defaultValue="Data Source=den1.mssql8.gear.host;Persist Security Info=True;User ID=banconextsoft;Password=next@1975" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\alexm\\source\\repos\\TesteNextSoft\\TesteNextSoft\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Estado']/@connectionString" />
-  </parameter>
-  <parameter name="Cidade-Web.config Connection String" description="Cidade A Cadeia de Conexão usada em web.config pelo aplicativo para acessar o banco de dados." defaultValue="Data Source=den1.mssql8.gear.host;Persist Security Info=True;User ID=banconextsoft;Password=next@1975" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\alexm\\source\\repos\\TesteNextSoft\\TesteNextSoft\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Cidade']/@connectionString" />
-  </parameter>
-</parameters>
